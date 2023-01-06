@@ -1,0 +1,27 @@
+<label >Nombre:</label>
+            
+    <input type="text" [(ngModel)]="persona.nombre" class="form-control border"/>
+    <label>Apellido:</label>
+            
+    <input type="text" [(ngModel)]="persona.apellido" class="form-control border"/>
+    <label>Edad:</label>
+                
+    <input type="number" [(ngModel)]="persona.edad" class="form-control border"/>
+    <input  type="button" value="Guardar" class="btn btn-danger" (click)="agregar()"/>
+        
+<table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Tipo</th>
+        </tr>
+                
+    <tr *ngFor="let p of personas" class="ht">
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.apellido }}</td>
+        <td>{{ p.edad }}</td>
+        <td *ngIf="p.edad>=18">Mayor de edad</td>
+        <td *ngIf="p.edad<18">Menor de edad</td>
+    </tr>
+</table>
